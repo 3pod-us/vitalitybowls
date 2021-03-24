@@ -119,8 +119,7 @@ var getOpenAndCloseTimes = {
 
 
 // ejecutando script:
-document.addEventListener("DOMContentLoaded", function(){
-  getOpenAndCloseTimes.init("twelve", function(open_at, close_at){
+getOpenAndCloseTimes.init("twelve", function(open_at, close_at){
   var location_open_at_elements = [...document.querySelectorAll(".location_open_at_element")]; 
   var location_close_at_elements = [...document.querySelectorAll(".location_close_at_element")]; 
 
@@ -133,5 +132,4 @@ document.addEventListener("DOMContentLoaded", function(){
       node.innerText = close_at;
     });
   }catch(e){console.error(e)}
-})
 })
