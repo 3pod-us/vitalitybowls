@@ -38,10 +38,10 @@ var GoogleReviewsInfo = {
 
 		var stars = "";
 		for (var i = ratingNumberInt - 1; i >= 0; i--) {
-			stars += "<span style='color:#e7711b;'>★</span>"
+			stars += "<span style='color:#e7711b;'>\u2605</span>"
 		}
 		for (var i = leftRating - 1; i >= 0; i--) {
-			stars += "<span>★</span>"
+			stars += "<span>\u2605</span>"
 		}
 		allStarsAnimated.innerHTML = stars;
 
@@ -62,10 +62,10 @@ var GoogleReviewsInfo = {
 			// rendering "stars"
 			var stars = "";
 			for (var i = rating - 1; i >= 0; i--) {
-				stars += "★"
+				stars += "\u2605"
 			}
 			for (var i = leftRating - 1; i >= 0; i--) {
-				stars += "<span class='not'>☆</span>"
+				stars += "<span class='not'>\u2606</span>"
 			}
 
 			// selectors.
