@@ -99,7 +99,7 @@ var GoogleReviewsInfo = {
 		var formatted_phone_number = r.result.formatted_phone_number;
 		var elements = [...document.querySelectorAll(".formatted_phone_number")];
 		elements.map(function( node ){
-			if(node.tagName === "a"){
+			if(node.tagName === "a"||node.tagName === "A"){
 				node.href = "tel:"+formatted_phone_number;
 			}
 	    	node.innerHTML = formatted_phone_number;
