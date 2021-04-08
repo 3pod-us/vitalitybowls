@@ -1,5 +1,9 @@
 var reviewsElement = document.querySelector(".google-business-reviews-rating");
-reviewsElement.style.display = "none";
+try{
+	reviewsElement.style.display = "none";
+}catch(e){
+	console.error(e);
+}
 var GoogleReviewsInfo = {
 	reviewsElement: reviewsElement,
 	results: {},
@@ -135,7 +139,11 @@ var GoogleReviewsInfo = {
 				app.renderHours(r);
 				app.renderPhone(r);
 				app.renderAddresses(r);
-				app.renderReviews(r);
+				try{
+					app.renderReviews(r);
+				}catch(e){
+					console.error(e);
+				}
 			})
 		}catch(e){
 			console.error(e);
