@@ -137,8 +137,8 @@ var GoogleReviewsInfo = {
 			}else{
 				node = node.parentNode;
 			}
-			
-			node.innerHTML = `${is_open_now} | <span style="color:#F5822A;" class="close_time">${today.close.hour}</span>`;
+      node.classList.add("open_now")
+			node.innerHTML = `${is_open_now} | <span style="color:#F5822A;" class="close_time">CLOSE AT ${today.close.hour}</span>`;
 		})
 	},
 	renderHours: function(r){
