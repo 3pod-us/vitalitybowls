@@ -117,28 +117,25 @@ var GoogleReviewsInfo = {
 	    });
 	},
 	openNow: function(r){
-		var periods = r.result.opening_hours.periods;
+		var weekday_text = r.result.opening_hours.weekday_text;
 		var is_open_now = r.result.opening_hours.open_now;
-		var today = periods[new Date().getDay()];
+		var today = weekday_text[new Date().getDay()];
+		today = today.split(": ")[1];
 		if(is_open_now === true){
 			is_open_now = "OPEN NOW"
 		}else{
 			is_open_now = "CLOSE NOW"
 		}
 
-		today.close.hour = today.close.time.substr(0, 2)+":"+today.close.time.substr(2, 4);
-		today.open.hour = today.open.time.substr(0, 2)+":"+today.open.time.substr(2, 4);
 		var titles = document.querySelectorAll(".open_now, h3.open_now");
-
 		[...titles].map(function( node ){
-
 			if(node.tagName === "h3" || node.tagName === "H3"){
 				//
 			}else{
 				node = node.parentNode;
 			}
-      node.classList.add("open_now")
-			node.innerHTML = `${is_open_now} | <span style="color:#F5822A;" class="close_time">CLOSE AT ${today.close.hour}</span>`;
+      	node.classList.add("open_now")
+			node.innerHTML = `${is_open_now} | <span style="color:#F5822A;" class="close_time">${today}</span>`;
 		})
 	},
 	renderHours: function(r){
